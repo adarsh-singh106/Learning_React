@@ -1,0 +1,51 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 90%;
+  margin-top: 1.5rem;
+}
+
+.button {
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  background-color: #3a3a3a;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+
+.button:hover {
+  background-color: #505050;
+  transform: scale(1.05);
+}
+
+.operator {
+  background-color: #ff9500;
+  color: #fff;
+}
+
+.operator:hover {
+  background-color: #e68a00;
+}
+
+.utility {
+  background-color: #636363;
+  color: #ff3b30;
+}
+
+.utility:hover {
+  background-color: #808080;
+}
+
+@media (max-width: 480px) {
+  .button {
+    height: 50px;
+    font-size: 1rem;
+  }
+}

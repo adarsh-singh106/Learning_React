@@ -1,0 +1,9 @@
+/* Container.module.css */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

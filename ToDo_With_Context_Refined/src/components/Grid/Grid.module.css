@@ -1,0 +1,25 @@
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.grid input {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.grid button {
+  padding: 8px 16px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}

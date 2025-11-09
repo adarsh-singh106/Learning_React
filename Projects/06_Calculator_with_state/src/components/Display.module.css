@@ -1,0 +1,11 @@
+.display {
+  width: 100%;            /* take full width of parent */
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: right;      /* numbers aligned to the right */
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* prevents overflow */
+}

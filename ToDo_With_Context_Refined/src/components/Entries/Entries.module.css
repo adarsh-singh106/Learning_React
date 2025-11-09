@@ -1,0 +1,40 @@
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 8px auto;
+  max-width: 500px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task {
+  font-weight: bold;
+}
+
+.date {
+  font-size: 12px;
+  color: gray;
+}
+
+.completed .task {
+  text-decoration: line-through;
+  color: gray;
+}
+
+button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}

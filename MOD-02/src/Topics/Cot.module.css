@@ -1,0 +1,5 @@
+.Cot {
+    border: 2px solid black; /* width + style + color */
+    border-radius: 5px; /* makes corners rounded */
+    margin: 10px;
+}

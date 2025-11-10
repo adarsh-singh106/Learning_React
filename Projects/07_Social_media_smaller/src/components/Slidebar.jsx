@@ -1,15 +1,21 @@
 import React from "react";
 
-const Slidebar = () => {
+const Slidebar = ({ selected_tab, set_selected_tab }) => {
   return (
-    <div
+    <nav
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
-      style={{ width: "280px" }}
+      style={{
+        width: "250px",
+        minHeight: "calc(100vh - 70px)",
+        position: "fixed",
+        top: "70px", // ✅ Push below the header
+        left: 0,
+        overflowY: "auto",
+        zIndex: 900,
+      }}
     >
-      <a
-        href="/"
-        className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-      >
+      {/* Brand / Header */}
+      <div className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <svg
           className="bi pe-none me-2"
           width="40"
@@ -18,13 +24,19 @@ const Slidebar = () => {
         >
           <use xlinkHref="#bootstrap"></use>
         </svg>
-        <span className="fs-4">Sidebar</span>
-      </a>
+        <span className="fs-4">My App</span>
+      </div>
       <hr />
 
+      {/* Nav links */}
       <ul className="nav nav-pills flex-column mb-auto">
-        <li className="nav-item">
-          <a href="#" className="nav-link active" aria-current="page">
+        <li className="nav-item" onClick={() => set_selected_tab("Home")}>
+          <a
+            href="#"
+            className={`nav-link ${
+              selected_tab === "Home" ? "active" : "text-white"
+            }`}
+          >
             <svg
               className="bi pe-none me-2"
               width="16"
@@ -36,8 +48,14 @@ const Slidebar = () => {
             Home
           </a>
         </li>
-        <li>
-          <a href="#" className="nav-link text-white">
+
+        <li onClick={() => set_selected_tab("Create Post")}>
+          <a
+            href="#"
+            className={`nav-link ${
+              selected_tab === "Create Post" ? "active" : "text-white"
+            }`}
+          >
             <svg
               className="bi pe-none me-2"
               width="16"
@@ -46,52 +64,15 @@ const Slidebar = () => {
             >
               <use xlinkHref="#speedometer2"></use>
             </svg>
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#table"></use>
-            </svg>
-            Orders
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#grid"></use>
-            </svg>
-            Products
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            <svg
-              className="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#people-circle"></use>
-            </svg>
-            Customers
+            Create Post
           </a>
         </li>
       </ul>
+
       <hr />
 
-      <div className="dropdown">
+      {/* Profile Dropdown */}
+      <div className="dropdown mt-auto">
         <a
           href="#"
           className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
@@ -110,17 +91,12 @@ const Slidebar = () => {
         <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
           <li>
             <a className="dropdown-item" href="#">
-              New project...
+              Profile
             </a>
           </li>
           <li>
             <a className="dropdown-item" href="#">
               Settings
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Profile
             </a>
           </li>
           <li>
@@ -133,7 +109,7 @@ const Slidebar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -17,9 +17,9 @@ const Post = ({ post }) => {
       )}
       <div className="card-body">
         <h5 className="card-title">{post.title}</h5>
-        <p className="card-text">{post.content}</p>
+        <p className="card-text">{post.content || post.body}</p>
         <p className="text-muted" style={{ fontSize: "0.8rem" }}>
-          {post.date}
+          {post.date || post.id}
         </p>
         <button
           className="btn btn-outline-danger btn-sm"

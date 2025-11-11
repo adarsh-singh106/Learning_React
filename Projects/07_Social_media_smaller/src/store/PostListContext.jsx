@@ -11,6 +11,8 @@ const PostListReducer = (state, action) => {
       return [action.payload, ...state]; // add new post at top
     case "DELETE_POST":
       return state.filter((post) => post.id !== action.payload);
+    case "ADD_INIT_POSTS":
+      return [...action.payload, ...state];
     default:
       return state;
   }
@@ -20,6 +22,7 @@ const PostListReducer = (state, action) => {
 export const PostList = createContext({
   postList: [],
   addPost: () => {},
+  addInitPost: () => {},
   deletePost: () => {},
 });
 
@@ -28,16 +31,19 @@ export const PostListProvider = ({ children }) => {
   const [postList, dispatch] = useReducer(PostListReducer, DEFAULT_STATE);
 
   const addPost = (newPost) => {
-  dispatch({ type: "ADD_POST", payload: newPost });
-};
+    dispatch({ type: "ADD_POST", payload: newPost });
+  };
 
+  const addInitPost = (posts) => {
+    dispatch({ type: "ADD_INIT_POSTS", payload: posts });
+  };
 
   const deletePost = (id) => {
     dispatch({ type: "DELETE_POST", payload: id });
   };
 
   return (
-    <PostList.Provider value={{ postList, addPost, deletePost }}>
+    <PostList.Provider value={{ postList, addPost, addInitPost, deletePost }}>
       {children}
     </PostList.Provider>
   );

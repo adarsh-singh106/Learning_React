@@ -8,11 +8,20 @@ const DEFAULT_STATE = [];
 const PostListReducer = (state, action) => {
   switch (action.type) {
     case "ADD_POST":
-      return [action.payload, ...state]; // add new post at top
+      return [action.payload, ...state];
+
     case "DELETE_POST":
       return state.filter((post) => post.id !== action.payload);
-    case "ADD_INIT_POSTS":
-      return [...action.payload, ...state];
+
+    case "ADD_INIT_POSTS": {
+      // prevent duplicate posts
+      const existingIds = new Set(state.map((p) => p.id));
+      const uniquePosts = action.payload.filter(
+        (p) => !existingIds.has(p.id)
+      );
+      return [...uniquePosts, ...state];
+    }
+
     default:
       return state;
   }

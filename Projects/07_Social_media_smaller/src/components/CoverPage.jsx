@@ -1,6 +1,6 @@
 import React from "react";
 
-const CoverPage = ({ onAddDummyPosts }) => {
+const CoverPage = () => {
      
   return (
     <center className="text-center d-flex flex-column justify-content-center align-items-center px-3" style={{ minHeight: "80vh" }}>
@@ -9,12 +9,12 @@ const CoverPage = ({ onAddDummyPosts }) => {
         Looks like your feed is empty! Start your journey by adding some posts and explore what others are sharing.
       </p>
       <p className="lead">
-        <button
+        {/* <button
           onClick={onAddDummyPosts}
           className="btn btn-lg btn-primary fw-bold text-white shadow-sm"
         >
           Generate Sample Posts
-        </button>
+        </button> */}
       </p>
     </center>
   );

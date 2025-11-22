@@ -1,8 +1,11 @@
 import React, { useState, useContext } from "react";
 import { PostList } from "../store/PostListContext";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const { addPost } = useContext(PostList);
+  const navigate = useNavigate();
+
 
   // form states
   const [title, setTitle] = useState("");
@@ -46,6 +49,7 @@ const CreatePost = () => {
     setImageURL("");
     setLocalImage(null);
     setPublish(false);
+    navigate("/")
   };
 
   return (

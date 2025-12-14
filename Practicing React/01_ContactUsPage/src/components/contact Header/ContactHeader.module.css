@@ -1,0 +1,18 @@
+.chead{
+    /* display: flex;
+    flex-direction: column; */
+    gap: 15px;
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.chead h1{
+    font-size: 48px;
+    font-weight: 800;
+    max-width: 80%;
+
+}
+.chead p{
+    font-weight: 500;
+
+}

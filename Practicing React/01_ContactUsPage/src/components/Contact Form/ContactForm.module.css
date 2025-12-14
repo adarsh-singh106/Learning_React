@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* FIX: This centers the container on the page */
+  margin: 0 auto; 
+  /* OPTIONAL: Add padding so it doesn't touch screen edges on small screens */
+  padding: 0 20px; 
+}
+
+.form {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 30px;
+  /* OPTIONAL: Ensure form takes up half the space */
+  flex: 1; 
+}
+
+.support {
+  display: flex;
+  padding: 25px;
+  margin: 0;
+  /* OPTIONAL: Ensure image side takes up half the space */
+  flex: 1;
+  justify-content: center; /* Centers image in its box */
+}
+
+.support img {
+  /* FIX: Ensure image is responsive, or it will break layout on small screens */
+  max-width: 100%; 
+  height: auto;
+}
+
+.box1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* padding: 20px;  <-- Remove this if the inputs look too squeezed */
+}
+
+/* Styles specifically for the input containers */
+.form_control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+.form_control input {
+  height: 40px;
+  padding: 0 8px;
+}
+.form_control textarea {
+  padding: 8px;
+}
+
+.form_control label {
+  font-size: 14px;
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  background-color: white;
+  padding: 0 10px;
+}
+/* Button 3 should span full width */
+.b3 {
+  grid-column: 1 / -1;
+  width: 100%;
+}

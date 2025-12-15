@@ -1,0 +1,60 @@
+/* Home.module.css */
+
+.container {
+  display: flex;
+  justify-content: center; /* Keeps content centered horizontally */
+  align-items: center;     /* Vertically centers the items inside */
+  max-width: 1180px;
+  margin: 0 auto;
+  height: 100vh;           /* Takes full height of the viewport */
+}
+
+.left_side {
+  /* FIX 1: Added display flex so align/justify actually work */
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Use % instead of fixed px for better responsiveness */
+}
+
+/* FIX 2: Control the image so it doesn't overflow */
+.left_side img {
+  max-width: 100%;
+  height: auto;
+}
+
+.right_side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: end;        /* Aligns text to the right */
+  width: 50%;
+}
+
+.right_side h1 {
+  font-size: 96px;
+  white-space: nowrap;
+  /* FIX 3: Remove default browser margin so layout is tight */
+  margin: 0; 
+  font-weight: 800; /* Makes it look like a bold headline */
+}
+
+.right_side button {
+  background-color: black;
+  color: white;
+  width: 220px;
+  padding: 10px 18px; /* Better than fixed height */
+  font-size: 16px;
+  border: 1px solid transparent;
+  border-radius: 5px; /* Adds a slight curve (modern look) */
+  cursor: pointer;    /* Shows hand icon on hover */
+  transition: 0.4s background; /* Smooth hover effect */
+}
+
+/* Optional: Add a hover effect */
+.right_side button:hover {
+  background-color: rgb(215, 204, 204);
+  color: black;
+  border: 1px solid black;
+}

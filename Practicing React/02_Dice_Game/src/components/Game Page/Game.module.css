@@ -1,0 +1,14 @@
+.Header{
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+.main_container{
+    padding: 40px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}

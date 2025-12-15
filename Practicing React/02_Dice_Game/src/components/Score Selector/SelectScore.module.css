@@ -1,0 +1,35 @@
+.box{
+    height: 72px;
+    width: 72px;
+    border: 1px solid black;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+.selected{
+    background-color: black;
+    color: white;
+}
+p{
+    font-size: 24px;
+    font-weight: 700;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+}
+.setME{
+    display: flex;
+    gap: 24px;
+}
+.alert{
+    color: red;
+}
+.box:hover {
+  cursor: pointer;
+}

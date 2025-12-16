@@ -1,0 +1,73 @@
+.cardContainer {
+  width: 100%; 
+  /* min-height allows the card to grow if text is long on mobile */
+  min-height: 140px; 
+  
+  border-radius: 20px;
+  
+  /* Glassmorphism Background */
+  background: radial-gradient(
+      90.16% 143.01% at 15.32% 21.04%, 
+      rgba(165, 239, 255, 0.2) 0%, 
+      rgba(110, 191, 244, 0.045) 77.08%, 
+      rgba(70, 144, 213, 0) 100%
+  );
+  
+  backdrop-filter: blur(13px); 
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  
+  display: flex;
+  padding: 10px;
+  align-items: center; 
+  gap: 16px; /* Slightly more gap for cleaner look */
+}
+
+.imageWrapper img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Prevent image from squashing on small screens */
+  flex-shrink: 0; 
+}
+
+.foodContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100%; <-- Removed to allow auto-growth */
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.info p {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: flex-end; 
+  margin-top: 10px; /* Ensure button doesn't hit text */
+}
+
+.priceBtn {
+  background-color: #FF4343;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}

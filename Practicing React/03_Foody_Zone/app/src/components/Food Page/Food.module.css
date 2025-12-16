@@ -1,7 +1,141 @@
-.main{
-    height: calc(100vh - 144px);
-    background-image: url("/bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.mainContainer {
+  min-height: 100vh;
+  background-image: url("/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding: 20px;
+  
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+/* --- HEADER SECTION --- */
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px; 
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logoSearchArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* KEY: Allows search bar to drop below logo on small screens */
+  gap: 20px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+}
+.zoneText { color: #fff; }
+
+.searchBox {
+  background: transparent;
+  border: 1px solid #FF4343;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 16px;
+}
+.searchBox::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* On very small phones, make search box full width */
+@media (max-width: 600px) {
+  .logoSearchArea {
+    flex-direction: column;
+    align-items: center;
+  }
+  .searchBox {
+    width: 100%; 
+  }
+}
+
+.filterArea {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap; /* Buttons wrap nicely on mobile */
+}
+
+.filterBtn {
+  background-color: #FF4343;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s background-color;
+}
+.filterBtn:hover {
+  background-color: #d12e2e;
+}
+
+/* --- THE GRID --- */
+.foodCardsContainer {
+  display: grid;
+  
+  /* OLD: repeat(3, 1fr)  <-- This caused the stretching
+     NEW: repeat(3, minmax(340px, 1fr)) 
+     Actually, the best fix for "constant size" is to stop using 1fr for the max width 
+     if you don't want them to stretch.
+  */
+
+  /* OPTION 1: Best for strictly constant size (Cards never grow, just center) */
+  grid-template-columns: repeat(auto-fit, 340px);
+  justify-content: center; /* This centers the group of cards */
+  
+  /* OPTION 2: If you want exactly 3 columns but NO stretching when few items exist */
+  /* grid-template-columns: repeat(3, 340px); */
+
+  column-gap: 20px;
+  row-gap: 32px;
+  
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* --- DESKTOP ONLY (Width > 1000px) --- */
+/* "One Page App" feel only on big screens */
+@media (min-width: 1000px) {
+  .mainContainer {
+    height: 100vh;
+    overflow: hidden; 
+  }
+
+  .foodCardsContainer {
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+    overflow-y: auto; 
+    height: 100%; 
+    padding-right: 10px;
+  }
+  
+  .foodCardsContainer::-webkit-scrollbar {
+    width: 8px;
+  }
+  .foodCardsContainer::-webkit-scrollbar-thumb {
+    background: #FF4343;
+    border-radius: 10px;
+  }
+}
+
+/* --- LOADER --- */
+.loader {
+  font-size: 30px;
+  color: white;
+  margin-top: 50px;
 }

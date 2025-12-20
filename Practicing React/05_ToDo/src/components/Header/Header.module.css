@@ -1,0 +1,61 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px; /* Gives breathing room */
+  background-color: transparent; /* Or white if you prefer */
+  width: 100%;
+  max-width: 1200px; /* Matches your landing page width */
+  margin: 0 auto; /* Centers the header */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: blueviolet;
+  cursor: pointer;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navLinks a:hover {
+  color: blueviolet;
+}
+
+.authButtons {
+  display: flex;
+  gap: 15px;
+}
+
+.loginBtn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.signupBtn {
+  background-color: black;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.signupBtn:hover {
+  background-color: #333;
+}

@@ -1,0 +1,151 @@
+/* Reset basic settings for this component */
+.pageContainer {
+  width: 100%;
+  max-width: 1200px; /* Prevents it from stretching too wide on big screens */
+  margin: 0 auto;    /* Centers the container */
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+/* --- HERO SECTION --- */
+.heroSection {
+  display: flex;
+  align-items: center;
+  
+  /* OLD: justify-content: space-between; (This was pushing them apart) */
+  /* NEW: Center them and use gap to control distance */
+  justify-content: center; 
+  
+  /* This controls the EXACT distance between text and card */
+  gap: 100px; 
+  
+  padding-bottom: 80px;
+}
+
+/* Optional: Prevent text from getting too wide and hitting the card */
+.heroContent {
+  max-width: 500px; 
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.highlight {
+  color: blueviolet; /* Adding color to emphasize "Start Doing" */
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* FIX: Button needs padding, not fixed height */
+.ctaButton {
+  padding: 15px 35px; 
+  font-size: 1rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05); /* Slight pop effect */
+  background-color: #7025b5;
+}
+
+/* --- THE ROTATING CARD --- */
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px; /* Adds 3D depth for the rotation */
+}
+
+.todoCard {
+  background-color: #ffffff;
+  width: 260px;
+  padding: 20px;
+  border-radius: 20px;
+  /* Better shadow than a black border */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+  border: 1px solid #eee;
+  transform: rotate(-5deg); /* Default tilt looks cool */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.todoCard:hover {
+  transform: rotate(0deg) scale(1.05); /* Straighten up on hover */
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.taskItem {
+  background-color: #f4f4f5; /* Cleaner gray background */
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.iconDone { color: green; font-size: 1.2rem; }
+.iconPending { color: #888; font-size: 1.2rem; }
+
+/* --- FEATURES SECTION --- */
+.featuresSection {
+  display: grid; /* Use Grid for items like this */
+  /* This creates 4 columns that stack automatically on small screens */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.featureItem {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  transition: background 0.3s;
+}
+
+.featureItem:hover {
+  background-color: #b5a7ff;
+}
+
+.featureItem h3 {
+  margin: 15px 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.featureItem p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* --- RESPONSIVENESS (Mobile View) --- */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column; /* Stack vertically on phones */
+    text-align: center;
+  }
+  
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+}

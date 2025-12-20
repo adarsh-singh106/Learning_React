@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F5F3FF; /* The soft purple looks great! */
+  
+  /* Bonus: Add your font here so it applies to the whole app */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* smoother scrolling behavior */
+  scroll-behavior: smooth;
+}

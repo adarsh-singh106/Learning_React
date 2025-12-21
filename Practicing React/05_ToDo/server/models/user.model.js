@@ -36,14 +36,18 @@ const UserSchema = new mongoose.Schema(
   }
 );
 
-UserSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {
-    return next();
-  }
+// CORRECT VERSION (No 'next')
+UserSchema.pre("save", async function () { // 1. Remove 'next' from here
   
+  if (!this.isModified("password")) {
+    return; // 2. Just return (stops the function)
+  }
+
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
-  next(); // <--- THIS WAS MISSING
+  
+  // 3. No need to call next() at the end. 
+  // Mongoose knows it's done because the function finishes.
 });
 
 module.exports = mongoose.model("User", UserSchema);
